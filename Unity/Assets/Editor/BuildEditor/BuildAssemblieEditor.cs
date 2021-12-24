@@ -103,7 +103,7 @@ namespace ET
 
             BuildTargetGroup buildTargetGroup = BuildPipeline.GetBuildTargetGroup(EditorUserBuildSettings.activeBuildTarget);
 
-            assemblyBuilder.compilerOptions.CodeOptimization = codeOptimization;
+            //assemblyBuilder.compilerOptions.CodeOptimization = codeOptimization;
             assemblyBuilder.compilerOptions.ApiCompatibilityLevel = PlayerSettings.GetApiCompatibilityLevel(buildTargetGroup);
             // assemblyBuilder.compilerOptions.ApiCompatibilityLevel = ApiCompatibilityLevel.NET_4_6;
 
@@ -180,6 +180,12 @@ namespace ET
             Debug.Log("set assetbundle success!");
             
             Debug.Log("build success!");
+        }
+
+        private class CodeOptimization
+        {
+            public static CodeOptimization Debug { get; internal set; }
+            public static CodeOptimization Release { get; internal set; }
         }
     }
 }
